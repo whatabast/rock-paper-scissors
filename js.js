@@ -5,77 +5,97 @@
 //     let rock = "rock";
 //     let paper = "paper";
 //     let scissors = "scissors";
+//     let compChoice = "";
 
 //     let x = Math.random();
 
 //     if(x<=0.3)
 //     {
-//         return rock;
+//         compChoice = rock;
 //     }
 //     else if(x>0.3 && x<=0.6)
 //     {
-//         return paper;
+//         compChoice = paper;
 //     }
 //     else
 //     {
-//         return scissors;
+//         comChoice = scissors;
 //     }
 // }
 
+// humanScore = 0;
+// compScore = 0;
 
-function getHumanChoice()
+// function getHumanChoice()
+// {
+//     let humanChoice = prompt("Rock! Paper!Scissors!");
+// }
+
+function playRound()
 {
-    let hand = prompt("Rock! Paper!Scissors!");
-
-    // return hand;
-
+     // Number of rounds
+    let n = prompt("Number of rounds?")
+    let humanChoice = "";
+    // Game outcome
+    let humanScore = 0;
+    let compScore = 0
+    // Computer chioce
     let rock = "rock";
     let paper = "paper";
     let scissors = "scissors";
+    let compChoice = "";
 
     let x = Math.random();
-    let comp = "";
 
-    if(x<=0.3)
+    for(let i=0; i<n; i++)
     {
-        comp = rock;
-        // return rock + hand;
-    }
-    else if(x>0.3 && x<=0.6)
-    {
-        comp = paper;
-        // return paper + hand;
-    }
-    else
-    {
-        comp = scissors;
-        // return scissors + hand;
-    }
+        x = Math.random();
+        
+        if(x<=0.3)
+        {
+            compChoice = rock;
+        }
+        else if(x>0.3 && x<=0.6)
+        {
+            compChoice = paper;
+        }
+        else
+        {
+            compChoice = scissors;
+        }
+    
+        // Human Choice
+        humanChoice = prompt("Rock! Paper!Scissors!");
 
-    let score = 0;
+        if(humanChoice == compChoice)
+        {
+            // return "Tie!" 
+        }
+        else if(compChoice==rock && humanChoice=="scissors")
+        {
+            compScore=compScore+1;
+            // return compScore + " Comp win rock"
+        }
+        else if(compChoice==paper && humanChoice=="rock")
+        {
+            compScore=compScore+1;
 
-    if(hand == comp)
-    {
-        score = score+0;
-        return "Tie! " + score
+            // return compScore + " Comp win paper"
+        }
+            else if(compChoice==scissors && humanChoice=="paper")
+        {
+            compScore=compScore+1;
+
+            // return compScore + " Comp win scissors"
+        }
+        else
+        {
+            humanScore = humanScore+1;
+            // return "Human wins! " + humanScore;
+        }
+
     }
-    else if(comp==rock && hand=="scissors")
-    {
-        score = score+1;
-        return score + " Comp win rock"
-    }
-    else if(comp==paper && hand=="rock")
-    {
-        score = score + 1;
-        return score + " Comp win paper"
-    }
-        else if(comp==scissors && hand=="paper")
-    {
-        score = score + 1;
-        return score + " Comp win scissors"
-    }
-    else
-    {
-        return "Human wins! "
-    }
+    
+    return "Human " + humanScore + "comp " + compScore
+
 }
