@@ -65,7 +65,7 @@ function playRound()
         }
     
         // Human Choice
-        humanChoice = prompt("Rock! Paper!Scissors!");
+        humanChoice = prompt("Rock! Paper! Scissors!");
 
         if(humanChoice == compChoice)
         {
@@ -96,6 +96,6 @@ function playRound()
 
     }
     
-    return "Human " + humanScore + "comp " + compScore
+    return "Human: " + humanScore + " Computer: " + compScore;
 
 }
