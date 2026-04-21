@@ -99,3 +99,6 @@ function playRound()
     return "Human: " + humanScore + " Computer: " + compScore;
 
 }
+
+
+// TESTING A RANDOM CHANGE TO SEE IF UI BRANCH WORKS
