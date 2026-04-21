@@ -28,7 +28,6 @@ function getComputerChoice()
 }
 
 let computer = getComputerChoice()
-console.log(computer)
 
 // -------------------------------
 
@@ -38,52 +37,16 @@ function getHumanChoice(rps)
 }
 let human = getHumanChoice(prompt("Rock! Paper! Scissors"));
 
-console.log(human);
 // ------------------------------
-// let humanScore = 0;
-// let computerScore = 0;
-
-// function playRound(humanChoice, computerChoice)
-// {
-//     if(humanChoice == computerChoice)
-//     {
-//         console.log("Tie!") 
-//     }
-//     else if(computerChoice=="rock" && humanChoice=="scissors")
-//     {
-//         computerScore=computerScore+1;
-//         console.log("Computer wins! Rock beats Scissors")
-//     }
-//     else if(computerChoice=="paper" && humanChoice=="rock")
-//     {
-//         computerScore=computerScore+1;
-//         console.log("Computer wins! Paper beats Rock")
-//     }
-//         else if(computerChoice=="scissors" && humanChoice=="paper")
-//     {
-//         computerScore=computerScore+1;
-//         console.log("Computer wins! Scissors beats Paper")
-//     }
-//     else
-//     {
-//         humanScore = humanScore+1;
-//         console.log("Human Wins! " + human + " beats " + computer);
-//     }
-
-//     console.log("Computer: " + computerScore 
-//         + " Human: " + humanScore)
-        
-// }
-
-
-// -------------------------------------------------
 
 function playGame()
 {
+    let humanScore = 0;
+    let computerScore = 0;
+
     for(let round = 0; round<5; round++)
     {
-        let humanScore = 0;
-        let computerScore = 0;
+        
 
         function playRound(humanChoice, computerChoice)
         {
@@ -116,7 +79,10 @@ function playGame()
                 + " Human: " + humanScore)
                 
         }
-        playRound(human, computer) 
+
+        human = getHumanChoice(prompt("Rock! Paper! Scissors"));
+        computer = getComputerChoice();
+        playRound(human, computer);
 
     }
 }
