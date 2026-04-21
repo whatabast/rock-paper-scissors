@@ -40,40 +40,40 @@ let human = getHumanChoice(prompt("Rock! Paper! Scissors"));
 
 console.log(human);
 // ------------------------------
-let humanScore = 0;
-let computerScore = 0;
+// let humanScore = 0;
+// let computerScore = 0;
 
-function playRound(humanChoice, computerChoice)
-{
-    if(humanChoice == computerChoice)
-    {
-        console.log("Tie!") 
-    }
-    else if(computerChoice=="rock" && humanChoice=="scissors")
-    {
-        computerScore=computerScore+1;
-        console.log("Computer wins! Rock beats Scissors")
-    }
-    else if(computerChoice=="paper" && humanChoice=="rock")
-    {
-        computerScore=computerScore+1;
-        console.log("Computer wins! Paper beats Rock")
-    }
-        else if(computerChoice=="scissors" && humanChoice=="paper")
-    {
-        computerScore=computerScore+1;
-        console.log("Computer wins! Scissors beats Paper")
-    }
-    else
-    {
-        humanScore = humanScore+1;
-        console.log("Human Wins! " + human + " beats " + computer);
-    }
+// function playRound(humanChoice, computerChoice)
+// {
+//     if(humanChoice == computerChoice)
+//     {
+//         console.log("Tie!") 
+//     }
+//     else if(computerChoice=="rock" && humanChoice=="scissors")
+//     {
+//         computerScore=computerScore+1;
+//         console.log("Computer wins! Rock beats Scissors")
+//     }
+//     else if(computerChoice=="paper" && humanChoice=="rock")
+//     {
+//         computerScore=computerScore+1;
+//         console.log("Computer wins! Paper beats Rock")
+//     }
+//         else if(computerChoice=="scissors" && humanChoice=="paper")
+//     {
+//         computerScore=computerScore+1;
+//         console.log("Computer wins! Scissors beats Paper")
+//     }
+//     else
+//     {
+//         humanScore = humanScore+1;
+//         console.log("Human Wins! " + human + " beats " + computer);
+//     }
 
-    console.log("Computer: " + computerScore 
-        + " Human: " + humanScore)
+//     console.log("Computer: " + computerScore 
+//         + " Human: " + humanScore)
         
-}
+// }
 
 
 // -------------------------------------------------
@@ -82,7 +82,42 @@ function playGame()
 {
     for(let round = 0; round<5; round++)
     {
+        let humanScore = 0;
+        let computerScore = 0;
+
+        function playRound(humanChoice, computerChoice)
+        {
+            if(humanChoice == computerChoice)
+            {
+                console.log("Tie!") 
+            }
+            else if(computerChoice=="rock" && humanChoice=="scissors")
+            {
+                computerScore=computerScore+1;
+                console.log("Computer wins! Rock beats Scissors")
+            }
+            else if(computerChoice=="paper" && humanChoice=="rock")
+            {
+                computerScore=computerScore+1;
+                console.log("Computer wins! Paper beats Rock")
+            }
+                else if(computerChoice=="scissors" && humanChoice=="paper")
+            {
+                computerScore=computerScore+1;
+                console.log("Computer wins! Scissors beats Paper")
+            }
+            else
+            {
+                humanScore = humanScore+1;
+                console.log("Human Wins! " + human + " beats " + computer);
+            }
+
+            console.log("Computer: " + computerScore 
+                + " Human: " + humanScore)
+                
+        }
         playRound(human, computer) 
+
     }
 }
 
