@@ -1,3 +1,7 @@
+const body = document.body;
+const div = document.createElement("div");
+
+
 // ---------------------------
 function getComputerChoice()
 {
@@ -39,27 +43,32 @@ function playRound(humanChoice, computerChoice)
 {
     if(humanChoice == computerChoice)
     {
-        console.log("Tie!") 
+        div.textContent = "Tie!";
+        body.append(div);
     }
     else if(computerChoice=="rock" && humanChoice=="scissors")
     {
         computerScore=computerScore+1;
-        console.log("Computer wins! Rock beats Scissors")
+        div.textContent = "Computer wins! Rock beats Scissors";
+        body.append(div);
     }
     else if(computerChoice=="paper" && humanChoice=="rock")
     {
         computerScore=computerScore+1;
-        console.log("Computer wins! Paper beats Rock")
+        div.textContent = "Computer wins! Paper beats Rock";
+        body.append(div);
     }
         else if(computerChoice=="scissors" && humanChoice=="paper")
     {
         computerScore=computerScore+1;
-        console.log("Computer wins! Scissors beats Paper")
+        div.textContent = "Computer wins! Scissors beats Paper";
+        body.append(div);
     }
     else
     {
         humanScore = humanScore+1;
-        console.log("Human Wins! " + human + " beats " + computer);
+        div.textContent =         "Human Wins! " + human + " beats " + computer;
+        body.append(div);
     }
 
         console.log("Computer: " + computerScore 
@@ -80,6 +89,5 @@ function playGame(buttonInput)
     human = buttonInput;
     computer = getComputerChoice();
 
-    console.log("Inside function playGame");
     playRound(human, computer);
 }
