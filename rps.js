@@ -82,12 +82,16 @@ function playRound(humanChoice, computerChoice)
         divFinal.textContent = "Human Wins the Game! Congradulatons!" +
         " Beating the computer " + computerScore + " to " + humanScore;
         body.append(divFinal);
+        humanScore = 0;
+        computerScore = 0;
     }
     else if(computerScore == 5)
     {
         divFinal.textContent = "Computer Wins the Game..." +
         " Beating you " + computerScore + " to " + humanScore;
         body.append(divFinal);
+        humanScore = 0;
+        computerScore = 0;
     }
 
 }
