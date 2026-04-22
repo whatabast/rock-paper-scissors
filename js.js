@@ -1,27 +1,5 @@
 
 
-// function getComputerChoice()
-// {
-//     let rock = "rock";
-//     let paper = "paper";
-//     let scissors = "scissors";
-//     let compChoice = "";
-
-//     let x = Math.random();
-
-//     if(x<=0.3)
-//     {
-//         compChoice = rock;
-//     }
-//     else if(x>0.3 && x<=0.6)
-//     {
-//         compChoice = paper;
-//     }
-//     else
-//     {
-//         comChoice = scissors;
-//     }
-// }
 
 // humanScore = 0;
 // compScore = 0;

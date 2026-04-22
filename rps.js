@@ -45,7 +45,7 @@ function playGame()
     let computerScore = 0;
 
     
-    let human = getHumanChoice(prompt("Rock! Paper! Scissors"));
+    let human = addEventListener(".buttons", getHumanChoice);
     let computer = getComputerChoice();
 
     function playRound(humanChoice, computerChoice)
