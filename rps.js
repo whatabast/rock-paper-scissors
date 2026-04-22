@@ -31,60 +31,55 @@ function getComputerChoice()
 
 // -------------------------------
 
-function getHumanChoice(rps)
-{
-    return rps.toLowerCase();
-}
-// let human = getHumanChoice(prompt("Rock! Paper! Scissors"));
+
 
 // ------------------------------
 
-function playGame()
+function playRound(humanChoice, computerChoice)
 {
-    let humanScore = 0;
-    let computerScore = 0;
-
-    
-    let human = addEventListener(".buttons", getHumanChoice);
-    let computer = getComputerChoice();
-
-    function playRound(humanChoice, computerChoice)
+    if(humanChoice == computerChoice)
     {
-        if(humanChoice == computerChoice)
-        {
-            console.log("Tie!") 
-        }
-        else if(computerChoice=="rock" && humanChoice=="scissors")
-        {
-            computerScore=computerScore+1;
-            console.log("Computer wins! Rock beats Scissors")
-        }
-        else if(computerChoice=="paper" && humanChoice=="rock")
-        {
-            computerScore=computerScore+1;
-            console.log("Computer wins! Paper beats Rock")
-        }
-            else if(computerChoice=="scissors" && humanChoice=="paper")
-        {
-            computerScore=computerScore+1;
-            console.log("Computer wins! Scissors beats Paper")
-        }
-        else
-        {
-            humanScore = humanScore+1;
-            console.log("Human Wins! " + human + " beats " + computer);
-        }
-
-            console.log("Computer: " + computerScore 
-                + " Human: " + humanScore)
-                
-        
-
-
-
+        console.log("Tie!") 
     }
-    playRound(human, computer);
+    else if(computerChoice=="rock" && humanChoice=="scissors")
+    {
+        computerScore=computerScore+1;
+        console.log("Computer wins! Rock beats Scissors")
+    }
+    else if(computerChoice=="paper" && humanChoice=="rock")
+    {
+        computerScore=computerScore+1;
+        console.log("Computer wins! Paper beats Rock")
+    }
+        else if(computerChoice=="scissors" && humanChoice=="paper")
+    {
+        computerScore=computerScore+1;
+        console.log("Computer wins! Scissors beats Paper")
+    }
+    else
+    {
+        humanScore = humanScore+1;
+        console.log("Human Wins! " + human + " beats " + computer);
+    }
+
+        console.log("Computer: " + computerScore 
+            + " Human: " + humanScore)
+
 
 }
 
-playGame();
+let humanScore = 0;
+let computerScore = 0;
+let human = "";
+let computer = "";
+
+
+function playGame(buttonInput)
+{
+
+    human = buttonInput;
+    computer = getComputerChoice();
+
+    console.log("Inside function playGame");
+    playRound(human, computer);
+}
